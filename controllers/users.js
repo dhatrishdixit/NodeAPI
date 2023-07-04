@@ -54,3 +54,21 @@ export const reqparams = async (req,res)=>{
          userInfo:user
     })
 }
+//put
+
+export const updateUser = async (req,res)=>{
+    const user = await User.find({name : req.params.uName});
+    res.status(201).json({
+         success:true,
+         message:"user updated"
+    })
+}
+
+//delete
+export const deleteUser = async (req,res)=>{
+    const user = await User.find({name : req.params.uName});
+    res.status(201).json({
+         success:true,
+         message:"user deleted"
+    })
+}
